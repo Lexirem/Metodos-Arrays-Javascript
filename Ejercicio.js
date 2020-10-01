@@ -9,6 +9,9 @@ let cities = ["miami", "barcelona", "madrid", "amsterdam", "berlin", "sao paulo"
 //ES5 =>
 
 
+ let citiesCap = cities.map(string => string.charAt(0).toUpperCase() + string.slice(1));
+ console.log(citiesCap);
+
 
 
 //ES6 =>
@@ -91,6 +94,13 @@ const students = [
 //ES5 =>
 
 
+/*let finalNote = students.map(function(newArr => {
+  let grade = (students.firstProject + students.secondProject)/2 * 0.4 + students.finalExam * 0.6;
+  return {
+    name: students.name
+    grade};  
+}));
+console.log(finalNote); */
 
 
 //ES6 =>
@@ -120,8 +130,11 @@ const menu = [
 
 //ES5 =>
 
+let promCal = (menu.reduce(function(acc, val) {
+  return acc + val.calories;
+}, 0)) / menu.length; 
 
-
+console.log(promCal);
 
 //ES6 =>
 
@@ -171,7 +184,12 @@ const product = {
 
 
 //ES5 =>
+let sumReview = product.reviews.reduce(function(acc, curr) {
+  return curr.rate + acc
+}, 0) 
+let avgReview = sumReview / product.reviews.length
 
+console.log(avgReview);
 
 
 
@@ -206,7 +224,8 @@ var people = [
 
 
 //ES6 =>
-
+let canDrink = people.filter (person => people.age >= 21);
+console.log(canDrink);
 
 
 
@@ -323,6 +342,10 @@ const numbers = [1, 60, 112, 123, 100, 99, 73, 45];
 
 
 //ES5 =>
+let result = numbers.filter(function(number) {
+  return number%2 !== 0 && number > 42
+});
+console.log(result);
 
 
 
